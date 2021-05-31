@@ -7,7 +7,7 @@ package Maze;
 
 import java.awt.Point;
 
-class Lattice {
+class Lattice {                                 //Checks for Ball co-ordinates & passes to algorithms
 	private boolean Passable;
 	private Point Father;
 	public Lattice() {

@@ -32,7 +32,7 @@ import javax.swing.border.EtchedBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-class MazeFrame extends JFrame {
+class MazeFrame extends JFrame {                                            //Class which adds functionality & creates UI
 	private static final char DepthFirstSearchSolveMaze = 0;
 	private static final char BreadthFirstSearchSolveMaze = 1;
 	private char solveMaze = 0;
@@ -131,8 +131,8 @@ class MazeFrame extends JFrame {
 				button_2.setEnabled(false);     //PlayerDo
 				button_3.setEnabled(true);      //ComputerDo
 				prompt.setEnabled(true);        //Prompt
-				int col = Integer.parseInt(spinner_2.getValue().toString());
-				int row = Integer.parseInt(spinner.getValue().toString());
+				int col = Integer.parseInt(spinner_2.getValue().toString());    //For accepting columns
+				int row = Integer.parseInt(spinner.getValue().toString());      //For accepting rows
 				if (maze.getColNumber() == col && maze.getRowNumber() == row) {
 					if (getCreateMaze() != maze.getCreateMaze()) {
 						maze.setCreateMaze(getCreateMaze());
@@ -161,11 +161,14 @@ class MazeFrame extends JFrame {
 		button_4.setActionCommand("GO");
 		panel_4.add(button_4);
 
-		btnQuit = new JButton("Quit");
+		btnQuit = new JButton("Quit");                              //Adds Quit button
 		btnQuit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
+				//System.exit(0);
+                                new user_player();
+                                //maze.setVisible(false);
+                                maze.disable();
 			}
 		});
 		btnQuit.setFont(new Font("Lucida Handwriting", Font.PLAIN, 12));
@@ -310,12 +313,10 @@ class MazeFrame extends JFrame {
 		panel = new Panel();
 		panel_2.add(panel, BorderLayout.NORTH);
 
-		button = new JButton("Restart");
+		button = new JButton("Restart");                //Restart button
 		button.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseClicked(MouseEvent e) {
-				//if (isBgmStart())
-					//maze.setAudioThreadStart();
+			public void mouseClicked(MouseEvent e) {			
 				maze.init();
 				maze.createMaze();
 				button_1.setEnabled(true);
@@ -329,7 +330,7 @@ class MazeFrame extends JFrame {
 		});
 		panel.add(button);
 
-		button_1 = new JButton("Pause");
+		button_1 = new JButton("Pause");                //Pause button
 		button_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -349,7 +350,7 @@ class MazeFrame extends JFrame {
 		});
 		panel.add(button_1);
 
-		prompt = new JButton("Hint");
+		prompt = new JButton("Hint");                   //Hint button
 		prompt.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -361,7 +362,7 @@ class MazeFrame extends JFrame {
 		});
 		panel.add(prompt);
 
-		button_2 = new JButton("Player do");
+		button_2 = new JButton("Player do");            //Player do button
 		button_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -382,7 +383,7 @@ class MazeFrame extends JFrame {
 		button_2.setEnabled(false);
 		panel.add(button_2);
 
-		button_3 = new JButton("Computer do");
+		button_3 = new JButton("Computer do");              //Computer do button
 		button_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {

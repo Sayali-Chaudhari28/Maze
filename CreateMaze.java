@@ -12,7 +12,7 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.Stack;
 
-abstract class AbstractCreateMaze {
+abstract class AbstractCreateMaze {                     //Creates maze using DFS approach
 	protected boolean isOutofBorder(int x, int y, int colNumber, int rowNumber) {
 		if ((x == 0 && y == 1) || (x == colNumber + 1 && y == rowNumber))
 			return false;
@@ -23,7 +23,7 @@ abstract class AbstractCreateMaze {
 	abstract void createMaze(Lattice[][] mazeLattice, int colNumber, int rowNumber);
 }
 
-class DepthFirstSearchCreateMaze extends AbstractCreateMaze {
+class DepthFirstSearchCreateMaze extends AbstractCreateMaze {           //DFS class
 
 	protected Point ArroundPoint(Lattice[][] mazeLattice, Point p, Stack<Point> s, Random rand, int colNumber,
 			int rowNumber) {

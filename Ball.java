@@ -7,7 +7,7 @@ package Maze;
 
 import java.awt.Color;
 
-class Ball {
+class Ball {                                    //Creates ball 
 	private int x;
 	private int y;
 	private Color color;
@@ -17,7 +17,7 @@ class Ball {
 		setColor(Color.GREEN);
 	}
 
-	public int getX() {
+	public int getX() {                     //Returns x coordinate
 		return x;
 	}
 
@@ -25,7 +25,7 @@ class Ball {
 		this.x = x;
 	}
 
-	public int getY() {
+	public int getY() {                 //Returns y coordinate
 		return y;
 	}
 
